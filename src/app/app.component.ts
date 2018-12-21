@@ -7,11 +7,12 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  gamescore: number;
+  gamescore = []
 
   increaseGameScore(event) {
     if(event.gamecondition === true){
-    console.log(event.score)
+      this.gamescore.push(event.score)
+      console.log(this.gamescore)
     }
   }
 }

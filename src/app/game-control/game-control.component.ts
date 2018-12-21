@@ -18,8 +18,8 @@ export class GameControlComponent implements OnInit {
 
   startGame() {
     this.gamecondition = true;
-    setInterval( () => {
-      let i = this.score;
+    let i = 0
+    let interval = setInterval( () => {
       i ++;
       this.score = i;
       this.gameStarted.emit({score: this.score, gamecondition: this.gamecondition});
