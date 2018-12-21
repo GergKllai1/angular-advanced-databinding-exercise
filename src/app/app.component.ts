@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  gamescore: number;
+
+  increaseGameScore(event) {
+    if(event.gamecondition === true){
+    console.log(event.score)
+    }
+  }
 }
+
