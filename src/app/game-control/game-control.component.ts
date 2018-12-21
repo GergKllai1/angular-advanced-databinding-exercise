@@ -6,7 +6,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent implements OnInit {
-  score: number = 0
+  score: number = 0;
+  gamecondition: boolean = true
 
   constructor() { }
 
@@ -14,10 +15,19 @@ export class GameControlComponent implements OnInit {
   }
 
   startGame() {
+    this.gamecondition = true;
     setInterval( () => {
       let i = this.score;
       i ++;
       this.score = i;
+      if(this.gamecondition === false){
+        clearInterval(i)
+        this.score = 0
+      }
     }, 1000)
+  }
+
+  stopGame() {
+    this.gamecondition = false;
   }
 }
